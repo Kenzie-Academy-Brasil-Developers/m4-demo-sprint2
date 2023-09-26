@@ -9,3 +9,8 @@ VALUES ('Título de exemplo 2', 'Conteúdo de exemplo 2', '2023-09-25'),
 INSERT INTO messages (title, content, createdAt) 
 VALUES ('Título de exemplo 6', 'Conteúdo de exemplo 6', '2023-09-25')
 RETURNING *;
+
+INSERT INTO messages (title, content, createdAt) 
+VALUES ('Título novo 1', 'Conteúdo novo 1', '2023-09-26'),
+('Título novo 2', 'Título novo 2', '2023-09-26')
+RETURNING *;

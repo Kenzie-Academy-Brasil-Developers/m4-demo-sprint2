@@ -1,0 +1,26 @@
+version: '3'
+services:
+  node-api:
+    build: ./  
+    ports:
+      - "3000:3000"  
+    environment:
+      DB_USER: postgres
+      DB_PASSWORD: 1234
+      DB_HOST: db
+      DB_DATABASE: mydb
+      DB_PORT: 5432  
+    depends_on:
+      - db 
+ 
+  db:
+    image: postgres:16 
+    volumes:
+      - postgres-data:/var/lib/postgresql/data 
+    environment:
+      POSTGRES_DB: mydb  
+      POSTGRES_USER: postgres  
+      POSTGRES_PASSWORD: 1234
+
+volumes:
+  postgres-data:  
